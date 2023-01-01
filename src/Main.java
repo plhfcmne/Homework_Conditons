@@ -96,7 +96,7 @@ public class Main {
 
         if (one>two&&two<=three) {System.out.println("Максимальное число "+one);}
             else if (two>three) {System.out.println("Максимальное число "+two);}
-                 else if (two==three&&two==one){System.out.println("Все числа равны "+three);}
+                 else if (two==three&&two==one){System.out.println("Все числа равные и их значение равно "+three);}
                  else {System.out.println("Максимальное число "+three);}
                            }
 }
