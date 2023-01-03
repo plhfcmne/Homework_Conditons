@@ -37,41 +37,30 @@ public class Main {
 
     public static void task3() {
         System.out.println("Задача 3");
-       int year=6000;
+       int year=2023;
        int a=year%4;
        int b=year%100;
        int c=year%400;
-        if (a!=0) {
-            System.out.println("Год невисокосный");
-            }
-        else if (b!=0) {System.out.println("Год високосный");
-            }
-        else if (c==0) {System.out.println("Год високосный");
+        if (a==0 && b!=0 || c==0) {
+            System.out.println("Год високосный");
+            } else  {System.out.println("Год невисокосный");
         }
-        else {System.out.println("Год невисокосный");
-        }
-
     }
 
     public static void task4() {
         System.out.println("Задача 4");
-       float deliveryDistance=100.1f;
-       byte term=1;
-       boolean a=deliveryDistance<20;
-       boolean b=deliveryDistance>=20&&deliveryDistance<60;
-       boolean c=deliveryDistance>=60&&deliveryDistance<100;
-
-       if (a) {
-           System.out.println("Потребуется дней для доставки: "+term);
-       } else if (b) {
-           System.out.println("Потребуется дней для доставки: "+(term+1));
-       } else if (c) {
-           System.out.println("Потребуется дней для доставки: "+(term+2));
+       float deliveryDistance=21.2f;
+       int term=1;
+       if (deliveryDistance>20)  {
+           term++;
        }
-       else {System.out.println("Свыше 100 км доставки нет");
-       }
-
+        if (deliveryDistance>60)  {
+            term++;
+        }
+        if (deliveryDistance>100) {System.out.println("Доставка более 100 км не осуществляется");
+        } else { System.out.println("Потребуется дней "+term);}
     }
+
 
     public static void task5() {
         System.out.println("Задача 5");
