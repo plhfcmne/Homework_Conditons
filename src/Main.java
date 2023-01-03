@@ -5,98 +5,91 @@ public class Main {
         task3();
         task4();
         task5();
-        task6();
-        task7();
     }
 
     public static void task1() {
         System.out.println("Задача 1");
-        byte age=20;
-        if (age>=18) {
-            System.out.println("Если возраст человека равен " + age + " , то он совершеннолетний");
-        }
-        if (age<18) {
-            System.out.println("Если возраст человека равен " + age + " , то он не достиг совершеннолетия, нужно немного подождать");
-        }
+        byte clientOS = 1;
+        if (clientOS == 1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else if (clientOS == 0) {
+            System.out.println("Установите версию приложения для iOS по ссылке");
+        } else {System.out.println("Ошибка. операционная система указана неверно");}
     }
 
     public static void task2() {
         System.out.println("Задача 2");
-        float temperature=-6.2f;
-        if (temperature>=5) {
-            System.out.println("На улице "+temperature+" градусов, можно идти без шапки");
+        byte clientOS = 0;
+        short clientDevice=2004;
+        if (clientDevice <= 2015) {
+            System.out.print("Установите облегченную версию");
+            if (clientOS==1) {
+                System.out.println(" для Android");
+            } else {System.out.println(" для IOS");
         }
-        else {System.out.println("На улице "+temperature+" градусов, нужно надеть шапку ");
+        } else if (clientOS==1) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для IOS по ссылке");
         }
     }
 
 
     public static void task3() {
         System.out.println("Задача 3");
-        float speed=23.5f;
-        if (speed>60) {
-            System.out.println("Если скорость "+speed+" то придется заплатить штраф");
-        }
-        else {System.out.println("Если скорость "+speed+" то можно ездить спокойно ");
+       int year=2023;
+       int a=year%4;
+       int b=year%100;
+       int c=year%400;
+        if (a==0 && b!=0 || c==0) {
+            System.out.println("Год високосный");
+            } else  {System.out.println("Год невисокосный");
         }
     }
 
     public static void task4() {
         System.out.println("Задача 4");
-        byte age=24;
-        boolean canGoToKindergaten=age>=2 && age<=6;
-        boolean canGoToSchool=age>=7 && age<=18;
-        boolean canGoToUniversity=age>=18 && age<=24;
-        if (canGoToKindergaten){System.out.println("Если возраст человека равен "+age+" , то ему нужно ходить в детский сад");
+       float deliveryDistance=21.2f;
+       int term=1;
+       if (deliveryDistance>20)  {
+           term++;
+       }
+        if (deliveryDistance>60)  {
+            term++;
         }
-        else
-        if (canGoToSchool){System.out.println("Если возраст человека равен "+age+" , то ему нужно ходить в школу");
-        }
-        else if (canGoToUniversity){System.out.println("Если возраст человека равен "+age+" , то ему нужно ходить в университет");
-        }
-        else {System.out.println("Если возраст человека равен "+age+" , то ему нужно ходить на работу");
-        }
+        if (deliveryDistance>100) {System.out.println("Доставка более 100 км не осуществляется");
+        } else { System.out.println("Потребуется дней "+term);}
     }
+
 
     public static void task5() {
         System.out.println("Задача 5");
-        byte age=14;
-        boolean canNotGoToPark=age<5;
-        boolean canGoToPark=age>=5 && age<14;
-        if (canNotGoToPark){System.out.println("Если возраст ребенка равен "+age+" , то ему нельзя кататься на аттракционе");
-        }
-        else
-        if (canGoToPark){System.out.println("Если возраст ребенка равен "+age+" , то ему можно кататься на аттракционе в сопровождении взрослого");
-        }
-        else {System.out.println("Если возраст ребенка равен "+age+" , то он может один кататься на аттракционе");
+         byte monthNumber=5;
+        switch (monthNumber) {
+            case 1:
+            case 2:
+            case 12:
+                System.out.println("Зимний месяц");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Весенний месяц");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Летний месяц");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Осенний месяц");
+                break;
+            default:
+                System.out.println("Такого месяца нет, введите значение месяца в диапазоне от 1 до 12");
         }
 
     }
 
-    public static void task6() {
-        System.out.println("Задача 6");
-        byte amount=102;
-        byte seatingPlace=1;
-        byte standingPlace=40;
-        byte freeSeatingPlace=(byte)(60-seatingPlace);
-        byte freeStandingPlace=(byte)(42-standingPlace);
-        byte freeTickets=(byte)(amount-seatingPlace-standingPlace);
-        boolean ThereAreFreeTicket=seatingPlace+standingPlace<102;
-        if (ThereAreFreeTicket){System.out.println("Осталось свободных билетов "+freeTickets+" , из низ сидячих мест - "+freeSeatingPlace+" , мест стоя -"+freeStandingPlace);
-        }
-        else
-         {System.out.println("Свободных билетов нет");
-        }
-    }
-    public static void task7() {
-        System.out.println("Задача 7");
-        int one=1;
-        int two=5;
-        int three=-13;
-
-        if (one>two&&two<=three) {System.out.println("Максимальное число "+one);}
-            else if (two>three) {System.out.println("Максимальное число "+two);}
-                 else if (two==three&&two==one){System.out.println("Все числа равны "+three);}
-                 else {System.out.println("Максимальное число "+three);}
-                           }
 }
